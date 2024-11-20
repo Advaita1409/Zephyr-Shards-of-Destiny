@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(1f,0f) * Time.deltaTime * moveSpeed);
-        if(Input.GetKey(KeyCode.Space) && isGround =  true){
+        if(Input.GetKey(KeyCode.Space) && isGround == true){
             Jump();
             isGround = false;
         }
@@ -26,6 +26,12 @@ public class Player : MonoBehaviour
         Vector2 velocity= rb.linearVelocity;
         velocity.y = jumpHeight;
         rb.linearVelocity= velocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Ground"){
+            isGround == true;
+        }
     }
 }
 
