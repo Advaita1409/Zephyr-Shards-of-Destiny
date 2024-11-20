@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    public float jumpHeight= 10f;
+    private bool isGround = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +15,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(1f,0f))
+        transform.Translate(new Vector2(1f,0f) * Time.deltaTime * moveSpeed);
+        if(Input.GetKey(KeyCode.Space) && isGround =  true){
+            Jump();
+            isGround = false;
+        }
+    }
+
+    void Jump(){
+        Vector2 velocity= rb.linearVelocity;
+        velocity.y = jumpHeight;
+        rb.linearVelocity= velocity;
     }
 }
+
