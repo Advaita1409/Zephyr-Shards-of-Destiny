@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float jumpHeight= 10f;
     private bool isGround = true;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,9 +20,16 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && isGround == true){
             Jump();
             isGround = false;
+            animator.SetBool("Jump", true);
+        }
+        if(Input.GetKey(KeyCode.DownArrow)){
+            Attack();
         }
     }
 
+    void Attack(){
+        animator.SetTrigger("Attack");
+    }
     void Jump(){
         Vector2 velocity= rb.linearVelocity;
         velocity.y = jumpHeight;
@@ -32,6 +40,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGround = true;
+            animator.SetBool("Jump", false);
         }
     }
 }
