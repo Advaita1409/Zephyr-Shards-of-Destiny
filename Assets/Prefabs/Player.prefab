@@ -178,3 +178,4 @@ MonoBehaviour:
   moveSpeed: 2.5
   rb: {fileID: 3970408764867890539}
   jumpHeight: 12
+  animator: {fileID: 0}
