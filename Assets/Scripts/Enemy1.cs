@@ -6,46 +6,55 @@ public class Enemy1 : MonoBehaviour
     public Animator animator;
     public float attackRange = 5f;
     public Transform attackPoint;
-    public float attackRadius = .5f;
+    public float attackRadius = 0.5f;
     public LayerMask attackLayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if(Vector2.Distance(player.position, transform.position)<= attackRange){
+        if (Vector2.Distance(player.position, transform.position) <= attackRange)
+        {
             RandomAttackAnimation();
         }
     }
 
-    void RandomAttackAnimation(){
-        int randomAttack = Random.Range(0,2);
-        if(randomAttack == 0){
+    public void RandomAttackAnimation()
+    {
+        int randomAttack = Random.Range(0, 2);
+        if (randomAttack == 0)
+        {
             animator.SetTrigger("Attack1");
-    }else{
-        animator.SetTrigger("Attack2");
+        }
+        else
+        {
+            animator.SetTrigger("Attack2");
+        }
     }
 
-    public void Attack(){
+    // This function is now correctly placed
+    public void Attack()
+    {
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
-        //if(collInfo){
-
-        //}
+        // Handle collision logic here
     }
 
-    void OnDrawGizmosSelected(){
+    // Ensure this is outside other methods
+    public void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,attackRange);
-        if(attackPoint ==  null){
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        if (attackPoint == null)
+        {
             return;
         }
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
-}
 }
