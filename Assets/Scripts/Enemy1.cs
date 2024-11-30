@@ -31,13 +31,21 @@ public class Enemy1 : MonoBehaviour
         animator.SetTrigger("Attack2");
     }
 
-    //public void Attack(){
-       // Physics2D.OverlapCircle()
-    //}
+    public void Attack(){
+        Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+        //if(collInfo){
+
+        //}
+    }
 
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,attackRange);
+        if(attackPoint ==  null){
+            return;
+        }
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 }
 }
