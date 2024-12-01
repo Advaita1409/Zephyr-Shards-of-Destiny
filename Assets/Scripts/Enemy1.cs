@@ -8,6 +8,7 @@ public class Enemy1 : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius = 0.5f;
     public LayerMask attackLayer;
+    public int maxHealth =2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
@@ -17,6 +18,9 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if(maxHealth<=0){
+            Die();
+        }
         if (Vector2.Distance(player.position, transform.position) <= attackRange)
         {
             RandomAttackAnimation();
@@ -40,7 +44,15 @@ public class Enemy1 : MonoBehaviour
     public void Attack()
     {
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+        
         // Handle collision logic here
+    }
+
+    public void TakeDamage(int damage){
+        if(maxHealth <=0){
+            return;
+        }
+        maxHealth -= damage;
     }
 
     // Ensure this is outside other methods
@@ -56,5 +68,8 @@ public class Enemy1 : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+    }
+    void Die(){
+        Destroy(gameObject);
     }
 }

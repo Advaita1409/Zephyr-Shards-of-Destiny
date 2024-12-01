@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public void Attack(){
         Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if(hit == true){
-            Debug.Log("attacked");
+            hit.GetComponent<Enemy1>().TakeDamage(1);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision){
