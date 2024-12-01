@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(maxHealth<=0){
+            Die();
+        }
         transform.Translate(new Vector2(1f,0f) * Time.deltaTime * moveSpeed);
         if(Input.GetKey(KeyCode.Space) && isGround == true){
             Jump();
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
     void Die(){
         GameObject tempEffect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(tempEffect, 0.501f);
+        Object.FindFirstObjectByType<GameManager>().isGameActive = false;
         Destroy(this.gameObject);
     }
 }
