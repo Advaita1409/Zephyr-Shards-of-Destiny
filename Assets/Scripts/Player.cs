@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius =1f;
     public LayerMask attackLayer;
+    public int maxHealth = 3;
+    public GameObject explosionPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,12 +56,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage){
+        if(maxHealth<=0){
+            return;
+        }
+        maxHealth -= damage;
+    }
+
     private void OnDrawGizmosSelected(){
         if(attackPoint == null){
             return;
         }
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+    }
+
+
+    void Die(){
+        GameObject tempEffect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(tempEffect, 0.501f);
+        Destroy(this.gameObject);
     }
 }
 

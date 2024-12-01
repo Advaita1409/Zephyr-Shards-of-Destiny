@@ -46,7 +46,7 @@ public class Enemy1 : MonoBehaviour
     {
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if(collInfo){
-            //whatever
+            collInfo.GetComponent<Player>().TakeDamage(1);
         }
         // Handle collision logic here
     }
