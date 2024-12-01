@@ -5,6 +5,8 @@ public class UiManager : MonoBehaviour
 {
     private int playerMaxhealth;
     public Text Health;
+    private int currentDiamond;
+    public Text diamondText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,5 +21,9 @@ public class UiManager : MonoBehaviour
         }
         playerMaxhealth = Object.FindFirstObjectByType<Player>().maxHealth;
         Health.text = playerMaxhealth.ToString();
+
+
+        currentDiamond = Object.FindFirstObjectByType<Player>().currentDiamond;
+        diamondText.text = currentDiamond.ToString();
     }
 }
