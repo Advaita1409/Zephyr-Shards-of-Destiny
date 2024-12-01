@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
             collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Trigger");
             Destroy(collision.gameObject, 1f);
         }
+        if(collision.gameObject.tag == "Trap"){
+            maxHealth--;
+        }
     }
 
     public void TakeDamage(int damage){

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Diamond
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -54,6 +55,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trap
+    uniqueID: 2483012219
     locked: 0
   m_RenderingLayers:
   - Default
