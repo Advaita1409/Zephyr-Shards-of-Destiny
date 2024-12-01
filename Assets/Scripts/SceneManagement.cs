@@ -4,9 +4,9 @@ using UnityEngine;
 public class SceneManagement : MonoBehaviour
 {
     public void PlayButton(){
-        SceneManagement.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScene");
     }
     public void ExitButton(){
-
+        Application.Quit();
     }
 }
