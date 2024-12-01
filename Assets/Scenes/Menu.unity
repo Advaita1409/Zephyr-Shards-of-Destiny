@@ -129,6 +129,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c330797eb92f2ac4fb1979d12243c8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &319558773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319558774}
+  - component: {fileID: 319558776}
+  - component: {fileID: 319558775}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &319558774
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319558773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191421577}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -343}
+  m_SizeDelta: {x: 1412.7622, y: 607.1221}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &319558775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319558773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.038625848, g: 0.17264125, b: 0.2924528, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7798e7cd4ba091b4295bfe4bdd250721, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 75
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Zephyr: The Shattered Horizon\n\nZephyr, a lone scavenger, makes a living
+    exploring treacherous ruins in search of shards to trade. During one such expedition,
+    he discovers a shard unlike any other : pure, uncorrupted, and pulsing with mysterious
+    power. \n\nToday you are Zephyr exploring through the colony for diamonds and
+    powers."
+--- !u!222 &319558776
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319558773}
+  m_CullTransparentMesh: 1
 --- !u!1 &558785437
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +599,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1732284924}
     m_Modifications:
+    - target: {fileID: 742839580159141317, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000052452
+      objectReference: {fileID: 0}
+    - target: {fileID: 742839580159141317, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -410
+      objectReference: {fileID: 0}
     - target: {fileID: 6598145242479940210, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -523,6 +614,14 @@ PrefabInstance:
     - target: {fileID: 6687500728972316044, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386445008805095611, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000036239
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386445008805095611, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -207
       objectReference: {fileID: 0}
     - target: {fileID: 7731192948818442767, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -610,7 +709,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8036213077048461667, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 319558774}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e659c34daf1b0244be8c8ba65d550c6, type: 3}
 --- !u!1660057539 &9223372036854775807
