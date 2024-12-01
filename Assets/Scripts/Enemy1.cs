@@ -74,7 +74,7 @@ public class Enemy1 : MonoBehaviour
     }
     void Die(){
         GameObject tempExplosionEffect = Instantiate(explosionPrefab,transform.position, Quaternion.identity);
-        Destroy(tempExplosionEffect,.501f);
+        Destroy(tempExplosionEffect, 1f);
         Destroy(this.gameObject);
     }
 }
