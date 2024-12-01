@@ -751,6 +751,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   parallaxEffect: -0.2
+--- !u!1 &826874827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826874828}
+  m_Layer: 6
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &826874828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826874827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.44, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1726489475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076544246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,7 +4407,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3682762996317479855, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 826874828}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3526958004556434472, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
       insertIndex: -1
