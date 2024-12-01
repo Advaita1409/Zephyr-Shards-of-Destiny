@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     public float jumpHeight= 10f;
     private bool isGround = true;
     public Animator animator;
+    public Transform attackPoint;
+    public float attackRadius =1f;
+    public LayerMask attackLayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,11 +27,11 @@ public class Player : MonoBehaviour
             animator.SetBool("Jump", true);
         }
         if(Input.GetKey(KeyCode.DownArrow)){
-            Attack();
+            AttackAnimation();
         }
     }
 
-    void Attack(){
+    void AttackAnimation(){
         animator.SetTrigger("Attack");
     }
     void Jump(){
@@ -36,12 +40,26 @@ public class Player : MonoBehaviour
         rb.linearVelocity= velocity;
     }
 
+    public void Attack(){
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+        if(hit == true){
+            Debug.Log("attacked");
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGround = true;
             animator.SetBool("Jump", false);
         }
+    }
+
+    private void OnDrawGizmosSelected(){
+        if(attackPoint == null){
+            return;
+        }
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
     }
 }
 

@@ -776,7 +776,7 @@ Transform:
   m_GameObject: {fileID: 826874827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.44, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.81, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 1242392582}
   - component: {fileID: 1242392586}
   - component: {fileID: 1242392587}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4356,6 +4356,18 @@ PrefabInstance:
     - target: {fileID: 2537519510715292147, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
       propertyPath: moveSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537519510715292147, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 826874828}
+    - target: {fileID: 2537519510715292147, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
+      propertyPath: attackRadius
+      value: 2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537519510715292147, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
+      propertyPath: attackLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3526958004556434472, guid: 2ab9659efb9ac8f468098983a40f71ba, type: 3}
       propertyPath: m_Name
