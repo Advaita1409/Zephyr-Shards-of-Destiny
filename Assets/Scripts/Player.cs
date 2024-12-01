@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float acceleration = 5f;
     public Rigidbody2D rb;
     public float jumpHeight= 10f;
     private bool isGround = true;
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
         if(maxHealth<=0){
             Die();
         }
+
+        moveSpeed += acceleration * Time.deltaTime;
         transform.Translate(new Vector2(1f,0f) * Time.deltaTime * moveSpeed);
         if(Input.GetKey(KeyCode.Space) && isGround == true){
             Jump();
