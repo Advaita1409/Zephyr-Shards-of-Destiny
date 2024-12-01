@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour
     public float attackRadius = 0.5f;
     public LayerMask attackLayer;
     public int maxHealth =2;
+    public GameObject explosionPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
@@ -44,7 +45,9 @@ public class Enemy1 : MonoBehaviour
     public void Attack()
     {
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
-        
+        if(collInfo){
+            //whatever
+        }
         // Handle collision logic here
     }
 
@@ -70,6 +73,8 @@ public class Enemy1 : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
     void Die(){
-        Destroy(gameObject);
+        GameObject tempExplosionEffect = Instantiate(explosionPrefab,transform.position, Quaternion.identity);
+        Destroy(tempExplosionEffect,.501f);
+        Destroy(this.gameObject);
     }
 }
