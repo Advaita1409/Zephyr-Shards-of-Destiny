@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 3;
     public GameObject explosionPrefab;
     public int currentDiamond =0;
+    public GameObject gameOverMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +24,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y<= -2.9f){
+            Die();
+        }
         if(maxHealth<=0){
             Die();
         }
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour
 
 
     void Die(){
+        gameOverMenu.SetActive(true);
         GameObject tempEffect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(tempEffect, 0.501f);
         Object.FindFirstObjectByType<GameManager>().isGameActive = false;
