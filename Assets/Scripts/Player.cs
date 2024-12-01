@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public LayerMask attackLayer;
     public int maxHealth = 3;
     public GameObject explosionPrefab;
+    public int currentDiamond =0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,6 +57,14 @@ public class Player : MonoBehaviour
         {
             isGround = true;
             animator.SetBool("Jump", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.tag == "Diamond"){
+            currentDiamond++;
+            collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Trigger");
+            Destroy(collision.gameObject, 1f);
         }
     }
 
